@@ -33,12 +33,7 @@ disk1  1008M   120K  1008M         -     0%     0%  1.00x  ONLINE  -
 ```
 
 ## 2 Create a RAID1 array using 2 files
-#### Create 2 files (RAID1 and RAID2)
-```
-dd if=/dev/zero of=RAID_DISK1 bs=1G count=1
-dd if=/dev/zero of=RAID_DISK2 bs=1G count=1
-```
-#### Create 2 files (RAID1 and RAID2)
+#### Create 2 files (RAID_DISK1 and RAID_DISK2)
 ```
 dd if=/dev/zero of=RAID_DISK1 bs=1G count=1
 dd if=/dev/zero of=RAID_DISK2 bs=1G count=1
