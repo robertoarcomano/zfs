@@ -1,7 +1,7 @@
 # ZFS useful commands and examples
 
 
-## 1 Create a simple disk using a single file 
+[1 Create a simple disk using a single file](https://github.com/robertoarcomano/zfs/blob/master/README.md#1-create-a-simple-disk-using-a-single-file-1)
 ## 2 Create a RAID1 array using 2 files
 ## 3 Create a Device and then attach to it a new Device to create RAID1
 
