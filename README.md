@@ -6,6 +6,7 @@
 ## [3 Create a Device and then attach to it a new Device to create RAID1](https://github.com/robertoarcomano/zfs#3-create-a-device-and-then-attach-to-it-a-new-device-to-create-raid1-1)
 ## [4 Create a Device and then add to it a new Device to create RAID0](https://github.com/robertoarcomano/zfs/blob/master/README.md#4-create-a-device-and-then-add-to-it-a-new-device-to-create-raid0-1)
 
+
 ## 1 Create a simple disk using a single file 
 #### 1.1 Create a dir and enter it
 ```
