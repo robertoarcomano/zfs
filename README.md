@@ -61,3 +61,38 @@ raid_disk  1008M   120K  1008M         -     0%     0%  1.00x  ONLINE  -
     /home/berto/zfs/RAID_DISK1      -      -      -         -      -      -
     /home/berto/zfs/RAID_DISK2      -      -      -         -      -      -
 ```
+
+## 3 Create a Device and then attach to it a new Device to create RAID1
+#### 2.1 Create 2 files (RAID_DISK1 and RAID_DISK2)
+```
+dd if=/dev/zero of=RAID_DISK1 bs=1G count=1
+dd if=/dev/zero of=RAID_DISK2 bs=1G count=1
+```
+#### 3.2 Create mount point
+```
+mkdir -p /media/raid_disk
+```
+#### 3.3 Create ZFS with RAID with 1 file device and set mount point
+```
+zpool create raid_disk /home/berto/zfs/RAID_DISK1 -m /media/raid_disk
+```
+#### 3.4 Attach new file device to create a RAID1
+```
+zpool attach raid_disk /home/berto/zfs/RAID_DISK1 /home/berto/zfs/RAID_DISK2
+```
+#### 3.5 Show the mounted disk
+```
+# df -hT /media/raid_disk
+Filesystem     Type  Size  Used Avail Use% Mounted on
+raid_disk         zfs   880M  128K  880M   1% /media/raid_disk
+```
+#### 3.6 Show the ZFS device
+```
+# zpool list raid_disk -v
+NAME   SIZE  ALLOC   FREE  EXPANDSZ   FRAG    CAP  DEDUP  HEALTH  ALTROOT
+raid_disk  1008M   710K  1007M         -     0%     0%  1.00x  ONLINE  -
+  mirror  1008M   710K  1007M         -     0%     0%
+    /home/berto/zfs/RAID_DISK1      -      -      -         -      -      -
+    /home/berto/zfs/RAID_DISK2      -      -      -         -      -      -
+
+```
