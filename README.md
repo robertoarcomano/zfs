@@ -1,5 +1,11 @@
 # ZFS useful commands and examples
 
+
+## 1 Create a simple disk using a single file 
+## 2 Create a RAID1 array using 2 files
+## 3 Create a Device and then attach to it a new Device to create RAID1
+
+
 ## 1 Create a simple disk using a single file 
 #### 1.1 Create a dir and enter it
 ```
