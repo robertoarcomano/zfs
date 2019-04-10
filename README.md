@@ -137,3 +137,9 @@ disk    1.97G   114K  1.97G         -     0%     0%  1.00x  ONLINE  -
   /home/berto/zfs/DISK2  1008M     9K  1008M         -     0%     0%
 
 ```
+## 5 Get risilvering performance better
+#### 5.1 Commands procfs
+```
+echo 0 > /sys/module/zfs/parameters/zfs_resilver_delay
+echo 0 > /sys/module/zfs/parameters/zfs_scan_idle
+```
